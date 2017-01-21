@@ -15,4 +15,9 @@ public class PointsCounter : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void AddPoints(int points)
+    {
+        pointsCounter += points;
+    }
 }

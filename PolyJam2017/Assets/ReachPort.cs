@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ReachPort : MonoBehaviour {
 
+    public Transform controller;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,6 +22,7 @@ public class ReachPort : MonoBehaviour {
         {
             other.transform.GetComponent<ShipController>().SetDirection(4);
             other.tag = "Port";
+            controller.GetComponent<PointsCounter>().AddPoints(1);
         }
     }
 }
