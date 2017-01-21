@@ -19,12 +19,14 @@ public class DirectionChanger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        shipsOnTarget.Add(other);
+        if(other.tag=="Ships")
+            shipsOnTarget.Add(other);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        shipsOnTarget.Remove(other);
+        if (other.tag == "Ships")
+            shipsOnTarget.Remove(other);
     }
 
     public void changeDirections(int dir)
