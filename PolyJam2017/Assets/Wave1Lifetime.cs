@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointsCounter : MonoBehaviour {
+public class Wave1Lifetime : MonoBehaviour {
 
-    public int pointsCounter = 0;
+    float birthTime;
 
 	// Use this for initialization
 	void Start () {
-		
+        birthTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (birthTime + 1.3f < Time.time)
+            Destroy(gameObject);
 	}
 }
