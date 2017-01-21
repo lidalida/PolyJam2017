@@ -15,6 +15,7 @@ public class MorseController : MonoBehaviour {
     bool isKeyDown = false;
 
     public Sprite s1, s2;
+    public Transform light;
 
     List<GameObject> dots = new List<GameObject>();
 
@@ -109,25 +110,25 @@ public class MorseController : MonoBehaviour {
             if (signal[2])
                 if (signal[1])
                     if (signal[0])
-                        Debug.Log("N");
+                        light.GetComponent<DirectionChanger>().changeDirections(7);
                     else
-                        Debug.Log("S");
+                        light.GetComponent<DirectionChanger>().changeDirections(3);
                 else
                     if (signal[0])
-                    Debug.Log("E");
-                else
-                    Debug.Log("W");
+                        light.GetComponent<DirectionChanger>().changeDirections(5);
+                    else
+                        light.GetComponent<DirectionChanger>().changeDirections(1);
             else
                 if (signal[1])
-                if (signal[0])
-                    Debug.Log("NE");
-                else
-                    Debug.Log("SW");
-            else
                     if (signal[0])
-                Debug.Log("SE");
-            else
-                Debug.Log("NW");
+                        light.GetComponent<DirectionChanger>().changeDirections(6);
+                    else
+                        light.GetComponent<DirectionChanger>().changeDirections(2);
+                else
+                    if (signal[0])
+                        light.GetComponent<DirectionChanger>().changeDirections(4);
+                    else
+                        light.GetComponent<DirectionChanger>().changeDirections(0);
             clearSignal();
             qualifyDots(1);
         }
