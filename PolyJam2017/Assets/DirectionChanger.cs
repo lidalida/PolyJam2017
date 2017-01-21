@@ -14,7 +14,12 @@ public class DirectionChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        foreach (Collider2D col in shipsOnTarget)
+            if (col.tag != "Ships")
+            {
+                shipsOnTarget.Remove(col);
+                break;
+            }
 	}
 
     void OnTriggerEnter2D(Collider2D other)
