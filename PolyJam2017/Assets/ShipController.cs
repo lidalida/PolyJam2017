@@ -65,34 +65,42 @@ public class ShipController : MonoBehaviour {
             case 7:
                 GetComponent<SpriteRenderer>().sprite = n;
                 kilwater.GetComponent<SpriteRenderer>().sprite = kn;
+                GetComponent<Animator>().SetInteger("direction", 7);
                 break;
             case 6:
                 GetComponent<SpriteRenderer>().sprite = ne;
                 kilwater.GetComponent<SpriteRenderer>().sprite = kne;
+                GetComponent<Animator>().SetInteger("direction", 6);
                 break;
             case 5:
                 GetComponent<SpriteRenderer>().sprite = e;
                 kilwater.GetComponent<SpriteRenderer>().sprite = ke;
+                GetComponent<Animator>().SetInteger("direction", 5);
                 break;
             case 4:
                 GetComponent<SpriteRenderer>().sprite = se;
                 kilwater.GetComponent<SpriteRenderer>().sprite = kse;
+                GetComponent<Animator>().SetInteger("direction", 4);
                 break;
             case 3:
                 GetComponent<SpriteRenderer>().sprite = s;
                 kilwater.GetComponent<SpriteRenderer>().sprite = ks;
+                GetComponent<Animator>().SetInteger("direction", 3);
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().sprite = sw;
                 kilwater.GetComponent<SpriteRenderer>().sprite = ksw;
+                GetComponent<Animator>().SetInteger("direction", 2);
                 break;
             case 1:
                 GetComponent<SpriteRenderer>().sprite = w;
                 kilwater.GetComponent<SpriteRenderer>().sprite = kw;
+                GetComponent<Animator>().SetInteger("direction", 1);
                 break;
             case 0:
                 GetComponent<SpriteRenderer>().sprite = nw;
                 kilwater.GetComponent<SpriteRenderer>().sprite = kw;
+                GetComponent<Animator>().SetInteger("direction", 0);
                 break;
             default:
                 break;
