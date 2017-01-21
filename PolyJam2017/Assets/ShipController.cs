@@ -12,8 +12,9 @@ public class ShipController : MonoBehaviour {
     Transform kilwater;
 
 	// Use this for initialization
-	void Start () {
+	void Start () {      
         kilwater = transform.GetChild(0);
+        Debug.Log("sr");
 	}
 	
 	// Update is called once per frame
