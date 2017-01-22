@@ -8,7 +8,7 @@ public class SpawnShips : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        InvokeRepeating("singleSpawn", 1.0f, 5f);
+        InvokeRepeating("singleSpawn", 1.0f, 1f);
 	}
 	
 	// Update is called once per frame

@@ -10,15 +10,27 @@ public class ShipController : MonoBehaviour {
     public Sprite n, ne, e, se, s, sw, w, nw;
     public Sprite kn, kne, ke, kse, ks, ksw, kw, knw;
     Transform kilwater;
+    Vector3 targetPos;
+    Vector3 lastPos;
+    float secondsFromDie;
+    public RuntimeAnimatorController ton;
 
 	// Use this for initialization
-	void Awake () {      
+	void Awake () {
+        secondsFromDie = 0;
         kilwater = transform.GetChild(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        SetDirection(direction);
+        if(secondsFromDie == 0)
+            SetDirection(direction);
+        else
+        {
+            transform.position = Vector3.Lerp(lastPos, targetPos, (Time.time - secondsFromDie) / 1.5f);
+            if (secondsFromDie + 1.5f < Time.time)
+                Destroy(gameObject);
+        }
 	}
 
     public void SetDirection(int dir)
@@ -85,6 +97,7 @@ public class ShipController : MonoBehaviour {
                 GetComponent<SpriteRenderer>().sprite = s;
                 kilwater.GetComponent<SpriteRenderer>().sprite = ks;
                 GetComponent<Animator>().SetInteger("direction", 3);
+                Debug.Log("WTF");
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().sprite = sw;
@@ -103,6 +116,23 @@ public class ShipController : MonoBehaviour {
                 break;
             default:
                 break;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy" || other.tag=="Octopus" || other.tag == "Ships")
+        {
+            GetComponent<Animator>().runtimeAnimatorController = ton;
+            if (other.tag == "Octopus")
+                other.tag = "Port";
+            if (direction > 3)
+                GetComponent<SpriteRenderer>().flipX = true;
+            direction = 8;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            secondsFromDie = Time.time;
+            targetPos = other.transform.position;
+            lastPos = transform.position;
         }
     }
 }
