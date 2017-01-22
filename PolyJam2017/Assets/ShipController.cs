@@ -15,6 +15,8 @@ public class ShipController : MonoBehaviour {
     float secondsFromDie;
     public RuntimeAnimatorController ton;
     GameObject controller;
+    AudioClip clip;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -131,6 +133,7 @@ public class ShipController : MonoBehaviour {
     {
         if (other.tag == "Enemy" || other.tag=="Octopus" || other.tag == "Ships")
         {
+            ShipCrashSound();
             GetComponent<Animator>().runtimeAnimatorController = ton;
             if (other.tag == "Octopus")
                 other.tag = "Port";
@@ -151,5 +154,12 @@ public class ShipController : MonoBehaviour {
             Destroy(gameObject);
             controller.GetComponent<SpawnShips>().ships_counter--;
         }
+    }
+
+    void ShipCrashSound()
+    {
+        clip = (AudioClip)Resources.Load("Audio/zderzenie");
+        controller.GetComponent<AudioSource>().PlayOneShot(clip);
+
     }
 }
