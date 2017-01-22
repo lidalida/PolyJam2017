@@ -16,7 +16,7 @@ public class PointsCounter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         time = (System.DateTime.Now - System.DateTime.Today).TotalSeconds;
-        if (time - time_start > 60)
+        if (time - time_start > 120)
             gameEnd();
 
 
