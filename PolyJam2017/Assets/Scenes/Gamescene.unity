@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 373691567}
   m_Layer: 0
   m_Name: latarnia
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,6 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsCounter: 0
+  total_points: 0
 --- !u!114 &1695312404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,6 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ships_counter: 0
+  total_ships_spawned: 0
   max_ships: 10
 --- !u!114 &1695312405
 MonoBehaviour:

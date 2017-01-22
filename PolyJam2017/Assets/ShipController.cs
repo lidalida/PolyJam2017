@@ -143,4 +143,13 @@ public class ShipController : MonoBehaviour {
             lastPos = transform.position;
         }
     }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag=="MainCamera")
+        {
+            Destroy(gameObject);
+            controller.GetComponent<SpawnShips>().ships_counter--;
+        }
+    }
 }
