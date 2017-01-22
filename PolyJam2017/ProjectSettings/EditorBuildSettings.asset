@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Gamescene.unity
   - enabled: 1
     path: Assets/Scenes/EndGameScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
