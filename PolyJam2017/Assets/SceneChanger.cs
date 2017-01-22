@@ -23,4 +23,9 @@ public class SceneChanger : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void Credits()
+    {
+        Application.LoadLevel("CreditsScene");
+    }
 }
