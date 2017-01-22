@@ -20,7 +20,7 @@ public class ReachPort : MonoBehaviour {
     {
         if (other.tag == "Ships")
         {
-            other.transform.GetComponent<ShipController>().SetDirection(4);
+            other.transform.GetComponent<ShipController>().SetDirection(1);
             other.tag = "Port";
             controller.GetComponent<PointsCounter>().AddPoints(1);
         }

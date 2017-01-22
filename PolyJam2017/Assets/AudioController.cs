@@ -14,9 +14,9 @@ public class AudioController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        actualClips = new int[2];
-        actualTimes = new float[2];
-        actualLengths = new float[2];
+        actualClips = new int[1];
+        actualTimes = new float[1];
+        actualLengths = new float[1];
     }
 	
 	// Update is called once per frame

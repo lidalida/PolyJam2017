@@ -14,11 +14,14 @@ public class ShipController : MonoBehaviour {
     Vector3 lastPos;
     float secondsFromDie;
     public RuntimeAnimatorController ton;
+    GameObject controller;
 
 	// Use this for initialization
 	void Awake () {
         secondsFromDie = 0;
         kilwater = transform.GetChild(0);
+        controller = GameObject.Find("GameController");
+
 	}
 	
 	// Update is called once per frame
@@ -31,7 +34,11 @@ public class ShipController : MonoBehaviour {
         {
             transform.position = Vector3.Lerp(lastPos, targetPos, (Time.time - secondsFromDie) / 1.5f);
             if (secondsFromDie + 1.5f < Time.time)
+            {
                 Destroy(gameObject);
+                controller.GetComponent<SpawnShips>().ships_counter--;
+                Debug.Log(controller.GetComponent<SpawnShips>().ships_counter);
+            }
         }
 	}
 
