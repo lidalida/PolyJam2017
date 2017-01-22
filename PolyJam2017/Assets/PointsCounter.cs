@@ -19,6 +19,23 @@ public class PointsCounter : MonoBehaviour {
         if (time - time_start > 60)
             gameEnd();
 
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            pointsCounter = GetComponent<SpawnShips>().total_ships_spawned;
+            gameEnd();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            pointsCounter = 0;
+            gameEnd();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            pointsCounter = GetComponent<SpawnShips>().total_ships_spawned/3;
+            gameEnd();
+        }
+
 	}
 
     public void AddPoints(int points)
