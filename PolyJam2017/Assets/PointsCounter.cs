@@ -5,10 +5,11 @@ using UnityEngine;
 public class PointsCounter : MonoBehaviour {
 
     public int pointsCounter = 0;
-    public float total_points;
+    static public float total_points;
     double time, time_start;
 	// Use this for initialization
 	void Start () {
+        pointsCounter = 0;
         time_start = (System.DateTime.Now - System.DateTime.Today).TotalSeconds;		
 	}
 	
@@ -28,10 +29,6 @@ public class PointsCounter : MonoBehaviour {
     private void gameEnd()
     {
         total_points = (float)pointsCounter / GetComponent<SpawnShips>().total_ships_spawned;
-        Debug.Log(pointsCounter + " points");
-        Debug.Log(GetComponent<SpawnShips>().total_ships_spawned+ " ships");
-
-        Debug.Log(total_points+ " total");
         Application.LoadLevel("EndGameScene");
     }
 }
