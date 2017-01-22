@@ -16,6 +16,7 @@ public class MorseController : MonoBehaviour {
 
     public Sprite s1, s2;
     public Transform light;
+    public Sprite l1, l2;
 
     List<GameObject> dots = new List<GameObject>();
 
@@ -46,10 +47,14 @@ public class MorseController : MonoBehaviour {
         GameObject instance;
         if (isKeyDown)
         {
-            instance = (GameObject)Instantiate(Resources.Load("Prefabs/MorseDot"), new Vector3(5.5f, -4f, 0f), new Quaternion(0, 0, 0, 0));
+            instance = (GameObject)Instantiate(Resources.Load("Prefabs/MorseDot"), new Vector3(11f, -8f, 0f), new Quaternion(0, 0, 0, 0));
+            instance.transform.localScale = new Vector3(2,2,1);
+            light.GetComponent<SpriteRenderer>().sprite = l2;
             instance.GetComponent<Rigidbody2D>().velocity = Vector2.left*2;
             dots.Add(instance);
         }
+        else
+            light.GetComponent<SpriteRenderer>().sprite = l1;
 
         reset();
         resolveSignal();
