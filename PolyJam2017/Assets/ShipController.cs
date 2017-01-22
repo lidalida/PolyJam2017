@@ -24,7 +24,9 @@ public class ShipController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(secondsFromDie == 0)
+        {
             SetDirection(direction);
+        }
         else
         {
             transform.position = Vector3.Lerp(lastPos, targetPos, (Time.time - secondsFromDie) / 1.5f);
@@ -97,7 +99,6 @@ public class ShipController : MonoBehaviour {
                 GetComponent<SpriteRenderer>().sprite = s;
                 kilwater.GetComponent<SpriteRenderer>().sprite = ks;
                 GetComponent<Animator>().SetInteger("direction", 3);
-                Debug.Log("WTF");
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().sprite = sw;

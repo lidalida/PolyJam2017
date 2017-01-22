@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172333199798900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.34, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665191066156010}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc039508049c04a4689af1705ffe489d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 7
   speed: 0.2
   n: {fileID: 21300000, guid: 616d80187d8cd424db649867e173549b, type: 3}
   ne: {fileID: 21300000, guid: da3ce46bef76d36499f6479619fa326e, type: 3}
@@ -154,6 +154,7 @@ MonoBehaviour:
   ksw: {fileID: 21300000, guid: ff1029b46477a1f4ebfb47aaef3f7c8f, type: 3}
   kw: {fileID: 21300000, guid: e9a25e452c592344fb1e833155cb517f, type: 3}
   knw: {fileID: 21300000, guid: e4ecfd5f922ef5145a547e1d270e9944, type: 3}
+  ton: {fileID: 9100000, guid: 247abfff4d574034eaa5afe89714bbe0, type: 2}
 --- !u!212 &212408844672588998
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -219,7 +220,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7a0d392515b54fe4b86377150f1db248, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

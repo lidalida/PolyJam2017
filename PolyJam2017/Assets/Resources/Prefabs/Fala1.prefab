@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4904178419603496}
   - component: {fileID: 212812909881943716}
   - component: {fileID: 95436668892449960}
-  - component: {fileID: 114946628535436402}
   m_Layer: 0
   m_Name: Fala1
   m_TagString: Untagged
@@ -37,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4864414046829196}
+  - component: {fileID: 114860394854179420}
   m_Layer: 0
   m_Name: Fala1
   m_TagString: Untagged
@@ -88,12 +88,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114946628535436402
+--- !u!114 &114860394854179420
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1421981057749904}
+  m_GameObject: {fileID: 1552194152104374}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eab505cf3a201a64697a8701aa9aa12d, type: 3}
